@@ -139,11 +139,11 @@
 	  $sellerRow = mysql_fetch_array($sellerResult);
 	  $sellerNickname = $sellerRow["nickname"];
 	  
-	  print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$itemId."\">".$itemName.
+	  print("<TR><TD><a href=\"ViewItem.php?itemId=".$itemId."\">".$itemName.
 		"<TD>".$itemInitialPrice."<TD>".$currentPrice."<TD>".$maxBid."<TD>".$quantity.
 		"<TD>".$startDate."<TD>".$endDate.
-		"<TD><a href=\"/PHP/ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
-		"<TD><a href=\"/PHP/PutBid.php?itemId=".$itemId."&nickname=".urlencode($nickname)."&password=".urlencode($password)."\"><IMG SRC=\"/PHP/bid_now.jpg\" height=22 width=90></a>\n");
+		"<TD><a href=\"ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
+		"<TD><a href=\"PutBid.php?itemId=".$itemId."&nickname=".urlencode($nickname)."&password=".urlencode($password)."\"><IMG SRC=\"bid_now.jpg\" height=22 width=90></a>\n");
 	
 	  mysql_free_result($sellerResult);
 	  //mysql_free_result($currentPriceResult);
@@ -204,9 +204,9 @@
          $sellerRow = mysql_fetch_array($sellerResult);
          $sellerNickname = $sellerRow["nickname"];
          
-         print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$itemId."\">".$itemName.
+         print("<TR><TD><a href=\"ViewItem.php?itemId=".$itemId."\">".$itemName.
                "<TD>".$currentPrice.
-               "<TD><a href=\"/PHP/ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
+               "<TD><a href=\"ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
                "\n");
          
          mysql_free_result($sellerResult);
@@ -266,9 +266,9 @@
          $sellerRow = mysql_fetch_array($sellerResult);
          $sellerNickname = $sellerRow["nickname"];
          
-         print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$itemId."\">".$itemName.
+         print("<TR><TD><a href=\"ViewItem.php?itemId=".$itemId."\">".$itemName.
                "<TD>".$buyNowRow["qty"]."<TD>$price".
-               "<TD><a href=\"/PHP/ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
+               "<TD><a href=\"ViewUserInfo.php?userId=".$sellerId."\">".$sellerNickname.
                "\n");
          
 	  mysql_free_result($sellerResult);
@@ -312,7 +312,7 @@
 	   if ($currentPrice == null)
 	   	$currentPrice = "none";
 
-	   print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$itemId."\">".$itemName.
+	   print("<TR><TD><a href=\"ViewItem.php?itemId=".$itemId."\">".$itemName.
                   "<TD>".$itemInitialPrice."<TD>".$currentPrice."<TD>".$quantity.
 		  "<TD>".$itemReservePrice."<TD>".$buyNow.
                   "<TD>".$startDate."<TD>".$endDate."\n");
@@ -358,7 +358,7 @@
 	   if ($currentPrice == null)
 	   	$currentPrice = "none";
 
-	   print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$itemId."\">".$itemName.
+	   print("<TR><TD><a href=\"ViewItem.php?itemId=".$itemId."\">".$itemName.
                   "<TD>".$itemInitialPrice."<TD>".$currentPrice."<TD>".$quantity.
 		  "<TD>".$itemReservePrice."<TD>".$buyNow.
                   "<TD>".$startDate."<TD>".$endDate."\n");
@@ -404,7 +404,7 @@
 	    $date = $commentsRow["date"];
 	    $comment = $commentsRow["comment"];
 	    
-	    print("<DT><b><BIG><a href=\"/PHP/ViewUserInfo.php?userId=".$authorId."\">$authorName</a></BIG></b>"." wrote the ".$date."<DD><i>".$comment."</i><p>\n");
+	    print("<DT><b><BIG><a href=\"ViewUserInfo.php?userId=".$authorId."\">$authorName</a></BIG></b>"." wrote the ".$date."<DD><i>".$comment."</i><p>\n");
 	    mysql_free_result($authorResult);
 	}
 	print("</DL>\n");

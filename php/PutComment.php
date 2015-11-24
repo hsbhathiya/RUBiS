@@ -104,7 +104,7 @@
     printHTMLheader("RUBiS: Comment service");
 
     print("<center><h2>Give feedback about your experience with ".$row["name"]."</h2><br>\n");
-    print("<form action=\"/PHP/StoreComment.php\" method=POST>\n".
+    print("<form action=\"StoreComment.php\" method=POST>\n".
           "<input type=hidden name=to value=$to>\n".
           "<input type=hidden name=from value=$userId>\n".
           "<input type=hidden name=itemId value=$itemId>\n".

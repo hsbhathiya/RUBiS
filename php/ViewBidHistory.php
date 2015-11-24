@@ -91,7 +91,7 @@
 	    printHTMLfooter($scriptName, $startTime);
 	    exit();
 	}
-    print("<TR><TD><a href=\"/PHP/ViewUserInfo.php?userId=".$userId."\">$nickname</a>"
+    print("<TR><TD><a href=\"ViewUserInfo.php?userId=".$userId."\">$nickname</a>"
 		  ."<TD>".$bidAmount."<TD>".$bidDate."\n");
     }
     print("</TABLE>\n");

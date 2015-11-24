@@ -89,7 +89,7 @@
     printHTMLHighlighted("You are ready to buy this item: ".$row["name"]);
     print("<TABLE>\n");
     print("<TR><TD>Quantity<TD><b><BIG>".$row["quantity"]."</BIG></b>\n");
-    print("<TR><TD>Seller<TD><a href=\"/PHP/ViewUserInfo.php?userId=".$row["seller"]."\">$sellerName</a> (<a href=\"/PHP/PutCommentAuth.php?to=".$row["seller"]."&itemId=".$row["id"]."\">Leave a comment on this user</a>)\n");
+    print("<TR><TD>Seller<TD><a href=\"ViewUserInfo.php?userId=".$row["seller"]."\">$sellerName</a> (<a href=\"PutCommentAuth.php?to=".$row["seller"]."&itemId=".$row["id"]."\">Leave a comment on this user</a>)\n");
     print("<TR><TD>Started<TD>".$row["start_date"]."\n");
     print("<TR><TD>Ends<TD>".$row["end_date"]."\n");
     print("</TABLE>\n");
@@ -99,7 +99,7 @@
     print("<br><p>\n");
 
     printHTMLHighlighted("Buy Now");
-    print("<form action=\"/PHP/StoreBuyNow.php\" method=POST>\n".
+    print("<form action=\"StoreBuyNow.php\" method=POST>\n".
           "<input type=hidden name=userId value=$userId>\n".
           "<input type=hidden name=itemId value=".$row["id"].">\n".
           "<input type=hidden name=maxQty value=".$row["quantity"].">\n");

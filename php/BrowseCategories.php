@@ -65,11 +65,11 @@
     while ($row = mysql_fetch_array($result))
     {
       if (!is_null($region))
-        print("<a href=\"/PHP/SearchItemsByRegion.php?category=".$row["id"]."&categoryName=".urlencode($row["name"])."&region=$region\">".$row["name"]."</a><br>\n");
+        print("<a href=\"SearchItemsByRegion.php?category=".$row["id"]."&categoryName=".urlencode($row["name"])."&region=$region\">".$row["name"]."</a><br>\n");
       else if ($userId != -1)
-        print("<a href=\"/PHP/SellItemForm.php?category=".$row["id"]."&user=$userId\">".$row["name"]."</a><br>\n");
+        print("<a href=\"SellItemForm.php?category=".$row["id"]."&user=$userId\">".$row["name"]."</a><br>\n");
       else
-        print("<a href=\"/PHP/SearchItemsByCategory.php?category=".$row["id"]."&categoryName=".urlencode($row["name"])."\">".$row["name"]."</a><br>\n");
+        print("<a href=\"SearchItemsByCategory.php?category=".$row["id"]."&categoryName=".urlencode($row["name"])."\">".$row["name"]."</a><br>\n");
     }
     mysql_free_result($result);
     mysql_close($link);

@@ -92,7 +92,7 @@
       else
       {
         print("<h2>Sorry, but there are no more items available in this category for this region!</h2>");
-        print("<p><CENTER>\n<a href=\"/PHP/SearchItemsByRegion.php?category=$categoryId&region=$regionId".
+        print("<p><CENTER>\n<a href=\"SearchItemsByRegion.php?category=$categoryId&region=$regionId".
               "&categoryName=".urlencode($categoryName)."&page=".($page-1)."&nbOfItems=$nbOfItems\">Previous page</a>\n</CENTER>\n");
       }
       mysql_free_result($result);
@@ -112,20 +112,20 @@
       if ((is_null($maxBid)) ||($maxBid == 0))
 	$maxBid = $row["initial_price"];
 
-      print("<TR><TD><a href=\"/PHP/ViewItem.php?itemId=".$row["id"]."\">".$row["name"].
+      print("<TR><TD><a href=\"ViewItem.php?itemId=".$row["id"]."\">".$row["name"].
             "<TD>$maxBid".
             "<TD>".$row["nb_of_bids"].
             "<TD>".$row["end_date"].
-            "<TD><a href=\"/PHP/PutBidAuth.php?itemId=".$row["id"]."\"><IMG SRC=\"/PHP/bid_now.jpg\" height=22 width=90></a>");
+            "<TD><a href=\"PutBidAuth.php?itemId=".$row["id"]."\"><IMG SRC=\"bid_now.jpg\" height=22 width=90></a>");
     }
     print("</TABLE>");  
     if ($page == 0)
-      print("<p><CENTER>\n<a href=\"/PHP/SearchItemsByRegion.php?category=$categoryId&region=$regionId".
+      print("<p><CENTER>\n<a href=\"SearchItemsByRegion.php?category=$categoryId&region=$regionId".
            "&categoryName=".urlencode($categoryName)."&page=".($page+1)."&nbOfItems=$nbOfItems\">Next page</a>\n</CENTER>\n");
     else
-      print("<p><CENTER>\n<a href=\"/PHP/SearchItemsByRegion.php?category=$categoryId&region=$regionId".
+      print("<p><CENTER>\n<a href=\"SearchItemsByRegion.php?category=$categoryId&region=$regionId".
             "&categoryName=".urlencode($categoryName)."&page=".($page-1)."&nbOfItems=$nbOfItems\">Previous page</a>\n&nbsp&nbsp&nbsp".
-            "<a href=\"/PHP/SearchItemsByRegion.php?category=$categoryId&region=$regionId".
+            "<a href=\"SearchItemsByRegion.php?category=$categoryId&region=$regionId".
             "&categoryName=".urlencode($categoryName)."&page=".($page+1)."&nbOfItems=$nbOfItems\">Next page</a>\n\n</CENTER>\n");
 
     mysql_free_result($result);

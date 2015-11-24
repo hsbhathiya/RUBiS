@@ -24,7 +24,7 @@
 
     while ($row = mysql_fetch_array($result))
     {
-      print("<a href=\"/PHP/BrowseCategories.php?region=".$row["id"]."\">".$row["name"]."</a><br>\n");
+      print("<a href=\"BrowseCategories.php?region=".$row["id"]."\">".$row["name"]."</a><br>\n");
     }
     mysql_free_result($result);
     mysql_close($link);

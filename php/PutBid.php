@@ -155,16 +155,16 @@
 
     print("<TR><TD>Quantity<TD><b><BIG>".$row["quantity"]."</BIG></b>\n");
     print("<TR><TD>First bid<TD><b><BIG>$firstBid</BIG></b>\n");
-    print("<TR><TD># of bids<TD><b><BIG>$nbOfBids</BIG></b> (<a href=\"/PHP/ViewBidHistory.php?itemId=".$row["id"]."\">bid history</a>)\n");
-    print("<TR><TD>Seller<TD><a href=\"/PHP/ViewUserInfo.php?userId=".$row["seller"]."\">$sellerName</a> (<a href=\"/PHP/PutCommentAuth.php?to=".$row["seller"]."&itemId=".$row["id"]."\">Leave a comment on this user</a>)\n");
+    print("<TR><TD># of bids<TD><b><BIG>$nbOfBids</BIG></b> (<a href=\"ViewBidHistory.php?itemId=".$row["id"]."\">bid history</a>)\n");
+    print("<TR><TD>Seller<TD><a href=\"ViewUserInfo.php?userId=".$row["seller"]."\">$sellerName</a> (<a href=\"PutCommentAuth.php?to=".$row["seller"]."&itemId=".$row["id"]."\">Leave a comment on this user</a>)\n");
     print("<TR><TD>Started<TD>".$row["start_date"]."\n");
     print("<TR><TD>Ends<TD>".$row["end_date"]."\n");
     print("</TABLE>\n");
 
     // Can the user by this item now ?
     if ($buyNow > 0)
-	print("<p><a href=\"/PHP/BuyNowAuth.php?itemId=".$row["id"]."\">".
-              "<IMG SRC=\"/PHP/buy_it_now.jpg\" height=22 width=150></a>".
+	print("<p><a href=\"BuyNowAuth.php?itemId=".$row["id"]."\">".
+              "<IMG SRC=\"buy_it_now.jpg\" height=22 width=150></a>".
               "  <BIG><b>You can buy this item right now for only \$$buyNow</b></BIG><br><p>\n");
 
     printHTMLHighlighted("Item description");
@@ -173,7 +173,7 @@
 
     printHTMLHighlighted("Bidding");
     $minBid = $maxBid+1;
-    print("<form action=\"/PHP/StoreBid.php\" method=POST>\n".
+    print("<form action=\"StoreBid.php\" method=POST>\n".
           "<input type=hidden name=minBid value=$minBid>\n".
           "<input type=hidden name=userId value=$userId>\n".
           "<input type=hidden name=itemId value=".$row["id"].">\n".

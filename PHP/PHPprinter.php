@@ -2,7 +2,7 @@
  
 function getDatabaseLink(&$link)
 {
-  $link = mysql_pconnect("localhost", "cecchet", "");
+  $link = mysql_pconnect("rubis.cdwd4nm9nqk7.ap-southeast-1.rds.amazonaws.com", "rubis", "rubis123");
   if (!$link)
   {
 	error_log("[".__FILE__."] Could not connect to database: " . mysql_error());

@@ -2,7 +2,7 @@
  
 function getDatabaseLink(&$link)
 {
-  $link = mysql_pconnect("172.31.21.250", "root", "");
+  $link = mysql_pconnect("172.31.21.250", "rubis", "rubis");
   if (!$link)
   {
 	error_log("[".__FILE__."] Could not connect to database: " . mysql_error());
